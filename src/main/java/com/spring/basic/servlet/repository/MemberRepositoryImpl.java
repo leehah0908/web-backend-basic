@@ -95,4 +95,19 @@ public class MemberRepositoryImpl implements MemberRepository {
             return null;
         }
     }
+
+    @Override
+    public void delete(String id) {
+        try (Connection conn = DriverManager.getConnection(url, username, password)) {
+            Class.forName(driverClassName);
+
+            String sql = "delete from tb1_members where id = \"" + id + "\"";
+
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+            pstmt.executeUpdate();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }

@@ -1,6 +1,5 @@
 package com.spring.basic.servlet.web.frontController.v1.controller;
 
-import ch.qos.logback.classic.net.SocketNode;
 import com.spring.basic.servlet.web.frontController.v1.ControllerV1;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -11,7 +10,6 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Set;
 
 @WebServlet("/front-controller/v1/*")
 public class FrontControllerServlet extends HttpServlet {
@@ -29,10 +27,10 @@ public class FrontControllerServlet extends HttpServlet {
 
     @Override
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        StringBuffer requestURL = request.getRequestURL();
+        String requestURI = request.getRequestURI();
 
         // 요청 URL에 맞는 컨트롤러를 앱에서 꺼내기
-        ControllerV1 controller = controllerMap.get(requestURL);
+        ControllerV1 controller = controllerMap.get(requestURI);
 
         if (controller == null) {
             response.setStatus(HttpServletResponse.SC_NOT_FOUND);

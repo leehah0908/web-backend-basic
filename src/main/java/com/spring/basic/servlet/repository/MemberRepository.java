@@ -9,4 +9,6 @@ public interface MemberRepository {
     void save(Member member);
 
     List<Member> getList();
+
+    void delete(String id);
 }

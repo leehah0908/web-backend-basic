@@ -17,6 +17,6 @@
     </ul>
 
     <br>
-    <a href="/front-controller/v1/members">전체 회원 목록 보기</a>
+    <a href="/front-controller/v4/members">전체 회원 목록 보기</a>
 </body>
 </html>
