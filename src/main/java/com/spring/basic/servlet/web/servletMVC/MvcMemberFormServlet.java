@@ -13,8 +13,7 @@ public class MvcMemberFormServlet extends HttpServlet {
 
     @Override
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-        System.out.println("MVC form servlet 동작");
-        response.sendRedirect("/jsp/member/join-form.jsp");
+//        response.sendRedirect("/jsp/member/join-form.jsp");
+        request.getRequestDispatcher("/WEB-INF/views/member/join-form.jsp").forward(request, response);
     }
 }

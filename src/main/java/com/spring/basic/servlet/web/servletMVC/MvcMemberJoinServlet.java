@@ -34,8 +34,8 @@ public class MvcMemberJoinServlet  extends HttpServlet {
         // response.sendRedirect("/jsp/member/join-result.jsp");
 
         // forward를 사용해서 요청을 view로 위임하는 기법을 사용해야 함
-        RequestDispatcher dp = request.getRequestDispatcher("/jsp/member/join-result.jsp");
-        dp.forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/views/member/join-result.jsp").forward(request, response);
+
 
     }
 }

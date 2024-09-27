@@ -20,7 +20,6 @@ public class MvcMemberListServlet extends HttpServlet {
         List<Member> memberList = MemberRepositoryImpl.getInstance().getList();
 
         request.setAttribute("mList", memberList);
-        RequestDispatcher dp = request.getRequestDispatcher("/jsp/member/members.jsp");
-        dp.forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/views/member/members.jsp").forward(request, response);
     }
 }
