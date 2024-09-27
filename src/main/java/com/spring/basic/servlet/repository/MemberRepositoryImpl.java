@@ -19,7 +19,7 @@ public class MemberRepositoryImpl implements MemberRepository {
 
     private static MemberRepositoryImpl repo = new MemberRepositoryImpl();
 
-    public static MemberRepository getInstance() {
+    public static MemberRepositoryImpl getInstance() {
         return repo;
     }
 
